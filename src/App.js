@@ -1,29 +1,36 @@
-import { BrowserRouter } from "react-router-dom";
-import { Routes, Route } from "react-router";
-import Home from "./components/pages/Home";
-import Contact from "./components/pages/Contact";
-import About from "./components/pages/About";
-import CustomMenu from "./components/common/CustomMenu";
-import CssBaseline from '@mui/material/CssBaseline';
-import Container from '@mui/material/Container';
-import "./scss/main.scss";
-import Footer from "./components/common/Footer";
+import React, {useState, useEffect} from "react";
+import axios from "axios";
+import Header from "./components/ui/Header";
+import CharacterGrid from "./components/characters/CharacterGrid";
+import Search from "./components/ui/Search";
+import "./App.css";
 
-function App() {
-  return (
-    <BrowserRouter>
-        <Container maxWidth="xl">
-            <CssBaseline />
-            <CustomMenu />
-            <Routes>
-                <Route exact path="/" element={<Home />}/>
-                <Route exact path="/kontakt" element={<Contact />}/>
-                <Route exact path="/onas" element={<About />}/>
-            </Routes>
-            <Footer />
-        </Container>
-    </BrowserRouter>
-  );
-}
+
+
+const App = () =>  {
+  const [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [query, setQuery] = useState("");
+
+
+  useEffect (() => {
+    const fetchItems = async () => {
+      const result = await axios(`https://www.breakingbadapi.com/api/characters?name=${query}`);
+
+      ///console.log(result.data);
+
+      setItems(result.data);
+      setIsLoading(false);
+    }
+
+    fetchItems();
+  }, [query]);
+
+  return <div className='container'> 
+    <Header />
+    <Search  getQuery={(q) => setQuery(q)}/>
+    <CharacterGrid  isLoading={isLoading} items={items} />
+  </div>
+ }
 
 export default App;
