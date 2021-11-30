@@ -4,6 +4,7 @@ import Header from "./components/ui/Header";
 import CharacterGrid from "./components/characters/CharacterGrid";
 import Search from "./components/ui/Search";
 import "./App.css";
+import Footer from "./components/ui/Footer";
 
 
 
@@ -30,6 +31,7 @@ const App = () =>  {
     <Header />
     <Search  getQuery={(q) => setQuery(q)}/>
     <CharacterGrid  isLoading={isLoading} items={items} />
+    <Footer />
   </div>
  }
 

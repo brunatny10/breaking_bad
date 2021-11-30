@@ -6,7 +6,7 @@
   
   html,
   body {
-    background: black;
+    background: #000 url('img/bg.jpg') no-repeat center center/cover;
     height: 100vh;
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
@@ -137,3 +137,40 @@
       object-fit: contain;
     }
   }
+
+  .footer {
+    height: 100px;
+    width: 1100px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.footer-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+.footer-text {
+    display: flex;
+}
+.footer-text p {
+    padding: 18px;
+    font-size: 25px;
+}
+
+.footer-copyright {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    letter-spacing: 3px;
+    font-size: 25px;
+}
+
+.footer-btn {
+    font-size: 30px;
+    padding: 18px;
+    color: white;
+    margin-left: 20px;
+}
