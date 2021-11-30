@@ -13,13 +13,13 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-icons">
-                    <a href="https://pl-pl.facebook.com/" className="footer-btn" role="button">
+                    <a href="https://pl-pl.facebook.com/" target="_blank" className="footer-btn" role="button" without rel="noreferrer">
                         <i className="fab fa-facebook-square"></i>
                     </a>
-                    <a href="https://twitter.com/" className="footer-btn" role="button">
+                    <a href="https://twitter.com/" target="_blank" className="footer-btn" role="button" without rel="noreferrer">
                         <i className="fab fa-twitter-square"></i>
                     </a>
-                    <a href="https://www.instagram.com/" className="footer-btn" role="button">
+                    <a href="https://www.instagram.com/" target="_blank" className="footer-btn" role="button" without rel="noreferrer">
                         <i className="fab fa-instagram"></i>
                     </a>
                 </div>
